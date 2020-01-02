@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,13 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Image to emoji maker">
 		<meta name="author" content="Kyle Cypher">
-        
+        <style>
+		all {border:0; margin:0; padding:0;display: block;} 
+		td {display: inline-block;position: relative;width: 6px;height: 4px;font-size: 10px;font-family: monospace;text-align: center;}
+		</style>
     </head>
     <body><h2>EmojImage</h2><p>Copy and paste an image into this page to Emojify it.</p>
         <div id="main_view">
             <canvas id="owot" class="screen_canvas" hidden></canvas>
             <canvas id="text" class="screen_canvas" hidden></canvas>
         </div>
+		<table id = "imageTable"></table>
          <script>
 setTimeout(function(){
   var ywot = false;
@@ -1337,7 +1340,6 @@ var emojiList = [
   "⬛",
   " "
 
-
 ]
 var emojiColors = {};
 var canvas = new OffscreenCanvas(0, 0);
@@ -1500,8 +1502,7 @@ str += "</td>"
 
 
 
-document.write("<html><head><style>all {border:0; margin:0; padding:0;display: block;} td {display: inline-block;position: relative;width: 6px;height: 4px;font-size: 10px;font-family: monospace;text-align: center;}</style></head><body>"+str+"</body></html>")
-
+document.getElementById("imageTable").innerHTML = str;
 
     };
 }
