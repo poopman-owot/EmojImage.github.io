@@ -1486,7 +1486,9 @@ str += "<table><tr>"
 
 
 var uc = colorToEmoji(rgb[i + 0],rgb[i + 1],rgb[i + 2]);
-
+if(rgb[i + 0] > 250 && rgb[i + 1] > 250 && rgb[i + 2] > 250 ){
+var uc = " ";
+}
 str += "<td>"
 str += (uc)
 str += "</td>"
